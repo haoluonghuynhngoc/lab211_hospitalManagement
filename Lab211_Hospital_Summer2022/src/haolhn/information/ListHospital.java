@@ -207,12 +207,6 @@ public class ListHospital implements I_List{
         if (index == -1) {
             System.out.println("List is Empty ");
         } else {
-//            System.out.println("+------------------------+------------------------+----------------+----------------+");
-//            System.out.println("+     ID DEPARTMENT      +           NAME         +   CREATE DATE  +   LAST DATE    +");
-//            System.out.println("+------------------------+------------------------+----------------+----------------+");
-//            dptList.get(index).showDepartment();
-//            System.out.println("+------------------------+------------------------+----------------+----------------+");
-            
             dptList.showInfor(dptList.get(index).getDepartmentID());
         }
     }
@@ -220,7 +214,7 @@ public class ListHospital implements I_List{
 //write department to file Department.dat
     @Override
     public boolean writeDepartmentIO() throws IOException {
-        File file = new File("Department.dat");
+        File file = new File("Department.txt");
         FileWriter fw = null;
         boolean check = false;
         if (!file.exists()) {
@@ -241,7 +235,7 @@ public class ListHospital implements I_List{
 // write doctor to file Doctor.dat
     @Override
     public boolean writeDoctorIO() throws IOException {
-        File file = new File("Doctor.dat");
+        File file = new File("Doctor.txt");
         boolean check = false;
         FileWriter fw = null;
         if (!file.exists()) {
@@ -262,7 +256,7 @@ public class ListHospital implements I_List{
 //read department form file Department.dat
     @Override
     public void readDepartmentIO() throws IOException {
-        File file = new File("Department.dat");
+        File file = new File("Department.txt");
         BufferedReader br = null;
         String line = "";
         Department department = null;
@@ -286,7 +280,7 @@ public class ListHospital implements I_List{
 // read doctor from file Doctor.dat
     @Override
     public void readDoctorIO() throws IOException {
-        File file = new File("Doctor.dat");
+        File file = new File("Doctor.txt");
         String line = "";
         boolean check = false;
         BufferedReader br = null;
